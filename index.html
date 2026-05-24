@@ -465,6 +465,13 @@
       align-items: center;
       padding: 40px;
     }
+    .about-logo img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 60px rgba(200,160,32,0.3);
+    }
 
     .about-stats {
       display: grid;
@@ -647,16 +654,7 @@
 <nav>
   <div class="nav-inner">
     <a href="#home" class="nav-logo">
-      <!-- Refuge Recovery trefoil logo (inline SVG) -->
-      <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="46" stroke="#C8A020" stroke-width="4"/>
-        <!-- top diamond -->
-        <polygon points="50,14 62,35 50,56 38,35" stroke="#C8A020" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
-        <!-- bottom-left diamond -->
-        <polygon points="29,49 41,70 29,91 17,70" stroke="#C8A020" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
-        <!-- bottom-right diamond -->
-        <polygon points="71,49 83,70 71,91 59,70" stroke="#C8A020" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
-      </svg>
+      <img src="logo.png" alt="Refuge Recovery logo" width="36" height="36" style="border-radius:50%;object-fit:cover;" />
       Triangle Refuge Recovery
     </a>
 
@@ -712,7 +710,7 @@
     <div class="section-label">Weekly Meetings</div>
     <h2 class="section-title">Come As You Are</h2>
     <p class="section-desc">
-      We hold in-person meetings three times a week in Raleigh, plus a Wednesday & Sunday online meeting open to everyone, everywhere.
+      We hold in-person meetings three times a week in Raleigh, plus online Zoom meetings every Wednesday and Sunday — open to everyone, everywhere.
     </p>
 
     <div class="meetings-grid">
@@ -986,6 +984,11 @@
               <span style="color:var(--gold);flex-shrink:0;">✦</span> No dues, fees, or religious requirements
             </li>
           </ul>
+        </div>
+
+        <!-- Logo display -->
+        <div class="about-logo" style="margin-top:32px;">
+          <img src="logo.png" alt="Refuge Recovery — three diamonds trefoil logo" />
         </div>
       </div>
     </div>
