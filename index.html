@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Triangle Refuge Recovery | Raleigh, NC</title>
+  <meta name="description" content="Triangle Refuge Recovery is a Buddhist-inspired addiction recovery group serving the greater Raleigh, NC area. In-person and online meetings. All are welcome." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:        #C8A020;
+      --gold-light:  #E8C050;
+      --gold-dim:    rgba(200,160,32,0.15);
+      --bg:          #0A0700;
+      --bg2:         #111008;
+      --bg3:         #181300;
+      --surface:     rgba(255,255,255,0.04);
+      --border:      rgba(200,160,32,0.2);
+      --text:        #F0E8D0;
+      --muted:       rgba(240,232,208,0.55);
+      --radius:      14px;
+      --radius-sm:   8px;
+      --max-w:       1100px;
+      --transition:  0.25s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--gold); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--gold-light); }
+
+    img { max-width: 100%; display: block; }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(10,7,0,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .nav-logo svg { flex-shrink: 0; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 99px;
+      transition: all var(--transition);
+    }
+    .nav-links a:hover {
+      color: var(--gold);
+      background: var(--gold-dim);
+    }
+
+    .nav-cta {
+      background: var(--gold) !important;
+      color: var(--bg) !important;
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover {
+      background: var(--gold-light) !important;
+    }
+
+    /* hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--gold);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 24px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* geometric background */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 30%, rgba(200,160,32,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 80% 60% at 30% 80%, rgba(200,160,32,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-dim);
+      border: 1px solid var(--border);
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 99px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--muted);
+      max-width: 560px;
+      margin: 20px auto 40px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 99px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--bg);
+    }
+    .btn-primary:hover { background: var(--gold-light); color: var(--bg); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,160,32,0.35); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      border: 1.5px solid var(--gold);
+    }
+    .btn-outline:hover { background: var(--gold-dim); transform: translateY(-2px); }
+
+    /* scroll indicator */
+    .scroll-down {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: bob 2s ease-in-out infinite;
+    }
+    .scroll-down svg { opacity: 0.5; }
+    @keyframes bob { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
+
+    /* ── Section Shared ── */
+    section {
+      padding: 96px 24px;
+    }
+
+    .section-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin-bottom: 56px;
+    }
+
+    /* ── Meetings ── */
+    #meetings { background: var(--bg2); }
+
+    .meetings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .meeting-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .meeting-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .meeting-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
+    .meeting-card:hover::before { opacity: 1; }
+
+    .meeting-type-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 99px;
+      margin-bottom: 16px;
+    }
+    .badge-inperson { background: rgba(200,160,32,0.15); color: var(--gold); border: 1px solid rgba(200,160,32,0.3); }
+    .badge-online { background: rgba(60,130,220,0.15); color: #60A0E0; border: 1px solid rgba(60,130,220,0.3); }
+
+    .meeting-day {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .meeting-time {
+      font-size: 1rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .meeting-info {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .meeting-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .meeting-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 99px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: all var(--transition);
+    }
+    .meeting-btn-dir { background: var(--gold-dim); color: var(--gold); border: 1px solid var(--border); }
+    .meeting-btn-dir:hover { background: rgba(200,160,32,0.25); color: var(--gold-light); }
+    .meeting-btn-zoom { background: rgba(60,130,220,0.15); color: #60A0E0; border: 1px solid rgba(60,130,220,0.3); }
+    .meeting-btn-zoom:hover { background: rgba(60,130,220,0.25); color: #80C0FF; }
+
+    .meetings-footer {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    /* ── Resources ── */
+    #resources { background: var(--bg); }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .resource-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: all var(--transition);
+      color: var(--text);
+    }
+    .resource-card:hover { border-color: var(--gold); background: var(--gold-dim); color: #fff; transform: translateX(4px); }
+
+    .resource-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: var(--gold-dim);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--gold);
+      font-size: 1.2rem;
+    }
+
+    .resource-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+    }
+
+    .resource-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .resource-arrow {
+      margin-left: auto;
+      color: var(--muted);
+      flex-shrink: 0;
+      transition: transform var(--transition);
+    }
+    .resource-card:hover .resource-arrow { transform: translate(3px, -3px); color: var(--gold); }
+
+    .donate-card {
+      background: linear-gradient(135deg, rgba(200,160,32,0.12), rgba(200,160,32,0.05));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .donate-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .donate-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      max-width: 480px;
+    }
+
+    /* ── About ── */
+    #about { background: var(--bg3); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    .about-text p strong {
+      color: var(--text);
+    }
+
+    .about-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 20px 16px;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* ── Quote ── */
+    .quote-block {
+      background: var(--gold-dim);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 24px 28px;
+      margin: 32px 0;
+    }
+
+    .quote-block blockquote {
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .quote-block cite {
+      display: block;
+      margin-top: 12px;
+      font-size: 0.8rem;
+      font-style: normal;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* ── Contact / Footer ── */
+    #contact { background: var(--bg2); padding-bottom: 0; }
+
+    .contact-top {
+      display: flex;
+      gap: 48px;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding-bottom: 64px;
+    }
+
+    .contact-left { max-width: 480px; }
+    .contact-left h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .contact-left p { color: var(--muted); margin-bottom: 28px; }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 99px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border: 1.5px solid var(--border);
+      color: var(--muted);
+      transition: all var(--transition);
+    }
+    .social-btn:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-dim); }
+
+    .contact-right {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .app-promo {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      max-width: 300px;
+    }
+
+    .app-promo h4 {
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .app-promo p { color: var(--muted); font-size: 0.85rem; margin-bottom: 16px; }
+
+    .app-store-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: var(--bg);
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      transition: all var(--transition);
+    }
+    .app-store-badge:hover { background: var(--gold-light); color: var(--bg); }
+
+    /* ── Footer bar ── */
+    .footer-bar {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: gap;
+      gap: 16px;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-links a { font-size: 0.8rem; color: var(--muted); }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── Divider ── */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: rgba(10,7,0,0.97); padding: 16px; gap: 4px; }
+      .nav-links.open { display: flex; }
+      .nav-links a { display: block; padding: 12px 16px; border-radius: var(--radius-sm); }
+      .nav-toggle { display: flex; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-logo { display: none; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      .contact-top { flex-direction: column; }
+      .contact-right { width: 100%; }
+      .app-promo { max-width: 100%; }
+      .footer-bar { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ── Nav ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <!-- Refuge Recovery trefoil logo (inline SVG) -->
+      <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="46" stroke="#C8A020" stroke-width="4"/>
+        <!-- top diamond -->
+        <polygon points="50,14 62,35 50,56 38,35" stroke="#C8A020" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
+        <!-- bottom-left diamond -->
+        <polygon points="29,49 41,70 29,91 17,70" stroke="#C8A020" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
+        <!-- bottom-right diamond -->
+        <polygon points="71,49 83,70 71,91 59,70" stroke="#C8A020" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
+      </svg>
+      Triangle Refuge Recovery
+    </a>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#meetings">Meetings</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Connect</a></li>
+    </ul>
+
+    <div class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ── Hero ── -->
+<section class="hero" id="home">
+  <div class="hero-badge">
+    <svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#C8A020"/></svg>
+    Raleigh, NC &bull; All are welcome
+  </div>
+
+  <h1>
+    Recovery Through<br/>
+    <span>Wisdom &amp; Community</span>
+  </h1>
+
+  <p class="hero-sub">
+    A Buddhist-inspired path out of addiction and suffering. We meet weekly in Raleigh and online — no experience required, all are welcome.
+  </p>
+
+  <div class="hero-buttons">
+    <a href="#meetings" class="btn btn-primary">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      Find a Meeting
+    </a>
+    <a href="#about" class="btn btn-outline">
+      Learn More
+    </a>
+  </div>
+
+  <div class="scroll-down">
+    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+  </div>
+</section>
+
+
+<!-- ── Meetings ── -->
+<section id="meetings">
+  <div class="section-inner">
+    <div class="section-label">Weekly Meetings</div>
+    <h2 class="section-title">Come As You Are</h2>
+    <p class="section-desc">
+      We hold in-person meetings three times a week in Raleigh, plus a Wednesday online meeting open to everyone, everywhere.
+    </p>
+
+    <div class="meetings-grid">
+
+      <!-- Monday -->
+      <div class="meeting-card">
+        <span class="meeting-type-badge badge-inperson">In Person</span>
+        <div class="meeting-day">Monday</div>
+        <div class="meeting-time">7:00 PM</div>
+        <p class="meeting-info">
+          <!-- UPDATE with actual address -->
+          Raleigh, NC<br/>
+          <em style="font-size:0.8rem;opacity:0.6;">(address to be confirmed — contact us)</em>
+        </p>
+        <div class="meeting-actions">
+          <!-- UPDATE href with Google Maps link once you have the address -->
+          <a href="https://maps.apple.com/?q=Raleigh+NC" target="_blank" rel="noopener" class="meeting-btn meeting-btn-dir">
+            <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            Directions
+          </a>
+        </div>
+      </div>
+
+      <!-- Wednesday In-Person -->
+      <div class="meeting-card">
+        <span class="meeting-type-badge badge-inperson">In Person</span>
+        <div class="meeting-day">Wednesday</div>
+        <div class="meeting-time">7:00 PM</div>
+        <p class="meeting-info">
+          Raleigh, NC<br/>
+          <em style="font-size:0.8rem;opacity:0.6;">(address to be confirmed — contact us)</em>
+        </p>
+        <div class="meeting-actions">
+          <a href="https://maps.apple.com/?q=Raleigh+NC" target="_blank" rel="noopener" class="meeting-btn meeting-btn-dir">
+            <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            Directions
+          </a>
+        </div>
+      </div>
+
+      <!-- Wednesday Online -->
+      <div class="meeting-card">
+        <span class="meeting-type-badge badge-online">Online · Zoom</span>
+        <div class="meeting-day">Wednesday</div>
+        <div class="meeting-time">7:00 PM ET</div>
+        <p class="meeting-info">
+          Open to everyone, everywhere.<br/>No Zoom account required.
+        </p>
+        <div class="meeting-actions">
+          <!-- UPDATE with your Zoom link -->
+          <a href="https://zoom.us" target="_blank" rel="noopener" class="meeting-btn meeting-btn-zoom">
+            <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M15 10l4.553-2.07A1 1 0 0121 8.847v6.306a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+            Join Zoom
+          </a>
+        </div>
+      </div>
+
+      <!-- Friday -->
+      <div class="meeting-card">
+        <span class="meeting-type-badge badge-inperson">In Person</span>
+        <div class="meeting-day">Friday</div>
+        <div class="meeting-time">7:00 PM</div>
+        <p class="meeting-info">
+          Raleigh, NC<br/>
+          <em style="font-size:0.8rem;opacity:0.6;">(address to be confirmed — contact us)</em>
+        </p>
+        <div class="meeting-actions">
+          <a href="https://maps.apple.com/?q=Raleigh+NC" target="_blank" rel="noopener" class="meeting-btn meeting-btn-dir">
+            <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            Directions
+          </a>
+        </div>
+      </div>
+
+      <!-- Sunday Online -->
+      <div class="meeting-card">
+        <span class="meeting-type-badge badge-online">Online · Zoom</span>
+        <div class="meeting-day">Sunday</div>
+        <div class="meeting-time">12:00 PM ET</div>
+        <p class="meeting-info">
+          Open to everyone, everywhere.<br/>No Zoom account required.
+        </p>
+        <div class="meeting-actions">
+          <!-- UPDATE with your Zoom link -->
+          <a href="https://zoom.us" target="_blank" rel="noopener" class="meeting-btn meeting-btn-zoom">
+            <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M15 10l4.553-2.07A1 1 0 0121 8.847v6.306a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+            Join Zoom
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="meetings-footer">
+      <a href="https://refugerecoverymeetings.org" target="_blank" rel="noopener" class="btn btn-outline">
+        Find More Refuge Recovery Meetings Worldwide
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── Resources ── -->
+<section id="resources">
+  <div class="section-inner">
+    <div class="section-label">Study &amp; Practice</div>
+    <h2 class="section-title">Recovery Resources</h2>
+    <p class="section-desc">
+      Worksheets, guides, and materials from Refuge Recovery to support your practice.
+    </p>
+
+    <div class="resources-grid">
+
+      <a href="https://www.refugerecovery.org/s/FIRST-TRUTH-INVENTORY.pdf" target="_blank" rel="noopener" class="resource-card">
+        <div class="resource-icon">📄</div>
+        <div>
+          <div class="resource-title">First Truth Inventory</div>
+          <div class="resource-meta">PDF · Worksheet</div>
+        </div>
+        <div class="resource-arrow">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </div>
+      </a>
+
+      <a href="https://www.refugerecovery.org/s/SECOND-TRUTH-INVENTORY.pdf" target="_blank" rel="noopener" class="resource-card">
+        <div class="resource-icon">📄</div>
+        <div>
+          <div class="resource-title">Second Truth Inventory</div>
+          <div class="resource-meta">PDF · Worksheet</div>
+        </div>
+        <div class="resource-arrow">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </div>
+      </a>
+
+      <a href="https://www.refugerecovery.org/s/REFUGE-RECOVERY-MENTORSHIP.pdf" target="_blank" rel="noopener" class="resource-card">
+        <div class="resource-icon">🤝</div>
+        <div>
+          <div class="resource-title">Mentorship Guide</div>
+          <div class="resource-meta">PDF · Guide</div>
+        </div>
+        <div class="resource-arrow">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </div>
+      </a>
+
+      <a href="https://www.refugerecovery.org/s/Process-Addiction-a.pdf" target="_blank" rel="noopener" class="resource-card">
+        <div class="resource-icon">🔄</div>
+        <div>
+          <div class="resource-title">Process Addictions</div>
+          <div class="resource-meta">PDF · Guide</div>
+        </div>
+        <div class="resource-arrow">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </div>
+      </a>
+
+      <a href="https://www.refugerecovery.org/meeting-resources" target="_blank" rel="noopener" class="resource-card">
+        <div class="resource-icon">📚</div>
+        <div>
+          <div class="resource-title">Meeting Resources</div>
+          <div class="resource-meta">Website · RefugeRecovery.org</div>
+        </div>
+        <div class="resource-arrow">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </div>
+      </a>
+
+      <a href="https://www.refugerecovery.org/start-a-new-in-person-meeting" target="_blank" rel="noopener" class="resource-card">
+        <div class="resource-icon">➕</div>
+        <div>
+          <div class="resource-title">Start a New Meeting</div>
+          <div class="resource-meta">Website · RefugeRecovery.org</div>
+        </div>
+        <div class="resource-arrow">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Donate -->
+    <div class="donate-card">
+      <div>
+        <h3>Support the Movement</h3>
+        <p>
+          In the Buddhist tradition of Dana — the practice of generosity — your donation helps keep Refuge Recovery free and accessible to all. Every gift, large or small, is an act of compassion.
+        </p>
+      </div>
+      <a href="https://www.refugerecovery.org/donate" target="_blank" rel="noopener" class="btn btn-primary">
+        Donate to Refuge Recovery
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── About ── -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">Our Story</div>
+    <h2 class="section-title">About Refuge Recovery</h2>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          <strong>Refuge Recovery</strong> is a practice, a process, a set of tools, a treatment, and a path to healing addiction and the suffering caused by addiction. Its guiding philosophy draws from the teachings of Siddhartha Gautama — a radical psychologist and spiritual revolutionary who, 2,500 years ago, came to understand why human beings cause and experience so much suffering.
+        </p>
+        <p>
+          He traced the root of that suffering to <em>"uncontrollable thirst or repetitive craving"</em> — whether for pleasure, for relief, or for people, places, and experiences we can't let go of. Through meditation, wise action, and compassion he found a way out of that suffering, and spent the rest of his life teaching others to do the same.
+        </p>
+        <p>
+          The Refuge Recovery program adapts these timeless teachings as a path of recovery from addiction. No religious background is required — just a desire to be free.
+        </p>
+
+        <div class="quote-block">
+          <blockquote>
+            "The only requirement for membership is a desire to be free from addiction."
+          </blockquote>
+          <cite>— Refuge Recovery</cite>
+        </div>
+
+        <p>
+          <strong>The Triangle Refuge Recovery Group</strong> serves the greater Raleigh, NC area with in-person meetings every Monday, Wednesday, and Friday, plus a Wednesday online Zoom meeting open to everyone, everywhere.
+        </p>
+
+        <a href="https://www.refugerecovery.org" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top:8px;">
+          Visit RefugeRecovery.org
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      </div>
+
+      <!-- Stats column -->
+      <div>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-num">3</span>
+            <div class="stat-label">In-person meetings per week</div>
+          </div>
+          <div class="stat">
+            <span class="stat-num">+1</span>
+            <div class="stat-label">Online Zoom meeting weekly</div>
+          </div>
+          <div class="stat">
+            <span class="stat-num">∞</span>
+            <div class="stat-label">All are welcome, always</div>
+          </div>
+        </div>
+
+        <div class="quote-block" style="margin-top:32px;">
+          <blockquote>
+            "Recovery is a journey. One day at a time. The sangha walks with you."
+          </blockquote>
+        </div>
+
+        <div style="margin-top:24px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px;">
+          <h4 style="color:#fff; font-weight:700; margin-bottom:12px;">What to Expect</h4>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
+            <li style="display:flex;gap:10px;font-size:0.9rem;color:var(--muted);">
+              <span style="color:var(--gold);flex-shrink:0;">✦</span> Meditation — sitting in awareness together
+            </li>
+            <li style="display:flex;gap:10px;font-size:0.9rem;color:var(--muted);">
+              <span style="color:var(--gold);flex-shrink:0;">✦</span> Sharing — open, non-judgmental discussion
+            </li>
+            <li style="display:flex;gap:10px;font-size:0.9rem;color:var(--muted);">
+              <span style="color:var(--gold);flex-shrink:0;">✦</span> Readings from the Refuge Recovery text
+            </li>
+            <li style="display:flex;gap:10px;font-size:0.9rem;color:var(--muted);">
+              <span style="color:var(--gold);flex-shrink:0;">✦</span> No dues, fees, or religious requirements
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── Contact ── -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-top">
+      <div class="contact-left">
+        <div class="section-label">Stay Connected</div>
+        <h2>Join Our Community</h2>
+        <p>
+          Follow us on social media for updates, meeting reminders, and words of encouragement. The sangha is here for you.
+        </p>
+
+        <div class="social-links">
+          <!-- UPDATE with actual social media links -->
+          <a href="https://www.instagram.com/trianglerefugerecovery/" target="_blank" rel="noopener" class="social-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/search/top?q=triangle%20refuge%20recovery" target="_blank" rel="noopener" class="social-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </a>
+          <a href="https://www.tiktok.com/@trianglerefugerecovery" target="_blank" rel="noopener" class="social-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+            TikTok
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <div class="app-promo">
+          <h4>📱 Get the App</h4>
+          <p>Track your sobriety, find meetings, access resources, and stay connected — right from your iPhone.</p>
+          <!-- UPDATE with actual App Store link -->
+          <a href="https://apps.apple.com/us/app/triangle-refuge-recovery/id6739545428" target="_blank" rel="noopener" class="app-store-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Download on App Store
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <div class="footer-copy">
+        &copy; 2026 Triangle Refuge Recovery Group &bull; Raleigh, NC &bull; All are welcome.
+      </div>
+      <div class="footer-links">
+        <a href="https://www.refugerecovery.org" target="_blank" rel="noopener">RefugeRecovery.org</a>
+        <a href="https://refugerecoverymeetings.org" target="_blank" rel="noopener">Find Meetings Worldwide</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  // Mobile nav toggle
+  const toggle = document.getElementById('nav-toggle');
+  const links  = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Smooth active nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navAs = document.querySelectorAll('.nav-links a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navAs.forEach(a => {
+          a.style.color = '';
+          a.style.background = '';
+        });
+        const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+        if (active && !active.classList.contains('nav-cta')) {
+          active.style.color = 'var(--gold)';
+        }
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
